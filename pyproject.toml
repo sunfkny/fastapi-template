@@ -1,0 +1,28 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "A fastapi template"
+dependencies = ["fastapi", "uvicorn", "loguru"]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+
+[tool.ruff]
+line-length = 160
+target-version = "py310"
+
+[tool.ruff.lint]
+extend-select = [
+    "A",    # https://docs.astral.sh/ruff/rules/#flake8-builtins-a
+    "B006", #https://docs.astral.sh/ruff/rules/mutable-argument-default/
+    # "I",    #https://docs.astral.sh/ruff/rules/#isort-i
+    # "INP",  #https://docs.astral.sh/ruff/rules/#flake8-no-pep420-inp
+    # "UP",   #https://docs.astral.sh/ruff/rules/#pyupgrade-up
+]
+ignore = [
+    "F401", # https://docs.astral.sh/ruff/rules/unused-import/
+    "E402", # https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file/
+]
+
+# [tool.uv.pip]
+# index-url = "https://mirrors.aliyun.com/pypi/simple/"
